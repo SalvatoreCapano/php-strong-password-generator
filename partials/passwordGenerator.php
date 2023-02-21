@@ -28,7 +28,17 @@ while (strlen($newPassword) < ($_GET['pswrdLngth'])) {
     }
 
     if ($newCharacter != null) {
-        $newPassword = $newPassword . $newCharacter;
+
+        if ($_GET['repetitionsAllowed'] == 'on') {
+            $isPresent = strpos($newPassword, $newCharacter);
+            if ($isPresent === false)  {
+                $newPassword = $newPassword . $newCharacter;
+            }
+        }
+        else {
+            $newPassword = $newPassword . $newCharacter;
+        }
+
     }
 
 }

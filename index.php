@@ -57,6 +57,11 @@ if ((isset($_GET['pswrdLngth'])) && (($_GET['lowercaseAllowed'] == 'on') || ($_G
                         <input type="checkbox" id="symbolsAllowed" name="symbolsAllowed">
                         <label for="symbolsAllowed">Deve contenere simboli</label>
                     </div>
+                    
+                    <div>
+                        <input type="checkbox" id="repetitionsAllowed" name="repetitionsAllowed">
+                        <label for="repetitionsAllowed">Deve essere composta da caratteri unici</label>
+                    </div>
 
                     <button type="submit">Genera</button>
 
