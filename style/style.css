@@ -16,29 +16,12 @@ body {
     text-align: center;
 }
 
-h1 {
+.mainTitle, .secondaryTitle {
     margin-bottom: 1.5rem;
     color: aliceblue;
 }
 
-.resultContainer {
-    max-width: 500px;
-    margin: 0 auto;
-    
-    border: 3px solid aliceblue;
-    border-radius: 10px;
-    background-color: #202020;
-    
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.resultContainer .newPassword {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #db6135;
-}
-
+/* index.php */
 .formContainer {
     max-width: 500px;
     margin: 0 auto;
@@ -79,4 +62,23 @@ h1 {
 
 .formContainer button:active {
     background-color: #454545;
+}
+
+/* showPassword.php */
+.resultContainer {
+    max-width: 500px;
+    margin: 0 auto;
+    
+    border: 3px solid aliceblue;
+    border-radius: 10px;
+    background-color: #202020;
+    
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.resultContainer .newPassword {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #db6135;
 }

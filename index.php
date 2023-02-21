@@ -1,6 +1,9 @@
 <?php
+session_start();
 
-include  __DIR__ . '/partials/passwordGenerator.php';
+if(isset($_GET['pswrdLngth'])) {
+    include  __DIR__ . '/partials/passwordGenerator.php';
+}
 
 ?>
 
@@ -21,16 +24,10 @@ include  __DIR__ . '/partials/passwordGenerator.php';
 
     <main>
         <div class="container">
+            
+            <h1 class="mainTitle">PHP Strong Password Generator</h1>
 
-            <h1>PHP Strong Password Generator</h1>
-
-            <div class="resultContainer">
-
-                <?php
-                    echo '<span class="newPassword">' . $newPassword . '</span>';
-                ?>
-
-            </div> <!-- /resultContainer-->
+            <h2 class="secondaryTitle">Imposta la complessita' della password</h2>
 
             <div class="formContainer">
 
@@ -39,7 +36,6 @@ include  __DIR__ . '/partials/passwordGenerator.php';
                     <div class="lengthGroup">
                         <label for="lengthInput">Lunghezza della Password</label>
                         <input type="number" id="lengthInput" min="5" max="20" name="pswrdLngth" value="15">
-                        <!-- <input type="range" id="lengthInput" min="5" max="20" name="pswrdLngth"> -->
                     </div> <!-- /lengthGroup-->
 
                     <button type="submit">Genera</button>

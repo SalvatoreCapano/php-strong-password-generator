@@ -1,8 +1,10 @@
 <?php
+session_start();
 
-$newPassword = null;
+$newPassword = '';
 
-do {
+// while (strlen($newPassword) < ($_GET['pswrdLngth']) ?? (0)) {
+while (strlen($newPassword) < ($_GET['pswrdLngth'])) {
 
     $characterType = random_int(1, 4);
 
@@ -10,18 +12,15 @@ do {
         // Genera lettera minuscola
         $charIndex = random_int(97, 122);
         $newCharacter = chr($charIndex);
-    }
-    else if ($characterType == 2) {
+    } else if ($characterType == 2) {
         // Genera lettera maiscola
         $charIndex = random_int(65, 90);
         $newCharacter = chr($charIndex);
-    }
-    else if ($characterType == 3) {
+    } else if ($characterType == 3) {
         // Genera numero 0-9
         $charIndex = random_int(48, 57);
         $newCharacter = chr($charIndex);
-    }
-    else if ($characterType == 4) {
+    } else if ($characterType == 4) {
         // Genera simbolo ! % + - / ?
         $charIndex = random_int(0, 5);
         $simbolsArray = [33, 37, 43, 45, 47, 63];
@@ -29,9 +28,12 @@ do {
     }
 
     $newPassword = $newPassword . $newCharacter;
+}
 
-} while (strlen($newPassword) < $_GET['pswrdLngth']);
+$_SESSION['newPassword'] = $newPassword;
 
-// echo "Lunghezza Password " . $_GET['pswrdLngth'] . '<br>';
+if (!empty($_SESSION['newPassword'])) {
+    header('Location: ./partials/showPassword.php');
+}
 
 ?>
