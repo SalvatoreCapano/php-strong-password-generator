@@ -38,9 +38,7 @@ while (strlen($newPassword) < ($_GET['pswrdLngth'])) {
         else {
             $newPassword = $newPassword . $newCharacter;
         }
-
     }
-
 }
 
 $_SESSION['newPassword'] = $newPassword;
