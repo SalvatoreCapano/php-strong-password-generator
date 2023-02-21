@@ -24,7 +24,7 @@ session_start();
 
             <div class="resultContainer">
                 <?php
-                    echo "<span class='newPassword'>" . $_SESSION['newPassword'] . "</span>";
+                echo "<span class='newPassword'>" . $_SESSION['newPassword'] . "</span>";
                 ?>
             </div> <!-- /resultContainer-->
 

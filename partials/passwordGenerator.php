@@ -3,31 +3,34 @@ session_start();
 
 $newPassword = '';
 
-// while (strlen($newPassword) < ($_GET['pswrdLngth']) ?? (0)) {
 while (strlen($newPassword) < ($_GET['pswrdLngth'])) {
 
     $characterType = random_int(1, 4);
+    $newCharacter = null;
 
-    if ($characterType == 1) {
+    if (($characterType == 1) && $_GET['lowercaseAllowed'] == 'on') {
         // Genera lettera minuscola
         $charIndex = random_int(97, 122);
         $newCharacter = chr($charIndex);
-    } else if ($characterType == 2) {
+    } else if (($characterType == 2) && $_GET['uppercaseAllowed'] == 'on') {
         // Genera lettera maiscola
         $charIndex = random_int(65, 90);
         $newCharacter = chr($charIndex);
-    } else if ($characterType == 3) {
+    } else if (($characterType == 3) && $_GET['numbersAllowed'] == 'on') {
         // Genera numero 0-9
         $charIndex = random_int(48, 57);
         $newCharacter = chr($charIndex);
-    } else if ($characterType == 4) {
+    } else if (($characterType == 4) && $_GET['symbolsAllowed'] == 'on') {
         // Genera simbolo ! % + - / ?
         $charIndex = random_int(0, 5);
         $simbolsArray = [33, 37, 43, 45, 47, 63];
         $newCharacter = chr($simbolsArray[$charIndex]);
     }
 
-    $newPassword = $newPassword . $newCharacter;
+    if ($newCharacter != null) {
+        $newPassword = $newPassword . $newCharacter;
+    }
+
 }
 
 $_SESSION['newPassword'] = $newPassword;
@@ -35,5 +38,3 @@ $_SESSION['newPassword'] = $newPassword;
 if (!empty($_SESSION['newPassword'])) {
     header('Location: ./partials/showPassword.php');
 }
-
-?>

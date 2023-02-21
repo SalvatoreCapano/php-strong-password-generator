@@ -16,15 +16,19 @@ body {
     text-align: center;
 }
 
-.mainTitle, .secondaryTitle {
+.mainTitle,
+.secondaryTitle {
     margin-bottom: 1.5rem;
     color: aliceblue;
 }
 
 /* index.php */
 .formContainer {
-    max-width: 500px;
+    width: fit-content;
     margin: 0 auto;
+
+    text-align: left;
+    color: aliceblue;
 
     border: 2px solid #db6135;
     border-radius: 10px;
@@ -35,18 +39,18 @@ body {
 
 .lengthGroup {
     margin-bottom: 1rem;
-    color: aliceblue;
 }
 
-.lengthGroup > * {
+.lengthGroup>* {
     vertical-align: middle;
 }
 
 .formContainer button {
-    display: inline-block;
+    display: block;
 
     padding: 0.75rem 1.5rem;
-    margin-top: 0.5rem;
+    margin: 0 auto;
+    margin-top: 1.25rem;
 
     background-color: #353535;
     border: 3px solid #db6135;
@@ -68,11 +72,11 @@ body {
 .resultContainer {
     max-width: 500px;
     margin: 0 auto;
-    
+
     border: 3px solid aliceblue;
     border-radius: 10px;
     background-color: #202020;
-    
+
     padding: 1.5rem;
     margin-bottom: 1.5rem;
 }

@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if(isset($_GET['pswrdLngth'])) {
+if ((isset($_GET['pswrdLngth'])) && (($_GET['lowercaseAllowed'] == 'on') || ($_GET['uppercaseAllowed'] == 'on') || ($_GET['numbersAllowed'] == 'on') || ($_GET['symbolsAllowed'] == 'on'))) {
     include  __DIR__ . '/partials/passwordGenerator.php';
 }
 
@@ -24,7 +24,7 @@ if(isset($_GET['pswrdLngth'])) {
 
     <main>
         <div class="container">
-            
+
             <h1 class="mainTitle">PHP Strong Password Generator</h1>
 
             <h2 class="secondaryTitle">Imposta la complessita' della password</h2>
@@ -37,6 +37,26 @@ if(isset($_GET['pswrdLngth'])) {
                         <label for="lengthInput">Lunghezza della Password</label>
                         <input type="number" id="lengthInput" min="5" max="20" name="pswrdLngth" value="15">
                     </div> <!-- /lengthGroup-->
+
+                    <div>
+                        <input type="checkbox" id="uppercaseAllowed" name="uppercaseAllowed" checked>
+                        <label for="uppercaseAllowed">Deve contenere lettere maiuscole</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" id="lowercaseAllowed" name="lowercaseAllowed">
+                        <label for="lowercaseAllowed">Deve contenere lettere minuscole</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" id="numbersAllowed" name="numbersAllowed">
+                        <label for="numbersAllowed">Deve contenere numeri</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" id="symbolsAllowed" name="symbolsAllowed">
+                        <label for="symbolsAllowed">Deve contenere simboli</label>
+                    </div>
 
                     <button type="submit">Genera</button>
 
