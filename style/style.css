@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #151515;
+}
+
+.container {
+    max-width: 1260px;
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 1.5rem;
+    color: aliceblue;
+}
+
+.resultContainer {
+    max-width: 500px;
+    margin: 0 auto;
+    
+    border: 3px solid aliceblue;
+    border-radius: 10px;
+    background-color: #202020;
+    
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.resultContainer .newPassword {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #db6135;
+}
+
+.formContainer {
+    max-width: 500px;
+    margin: 0 auto;
+
+    border: 2px solid #db6135;
+    border-radius: 10px;
+    background-color: #202020;
+
+    padding: 1.5rem;
+}
+
+.lengthGroup {
+    margin-bottom: 1rem;
+    color: aliceblue;
+}
+
+.lengthGroup > * {
+    vertical-align: middle;
+}
+
+.formContainer button {
+    display: inline-block;
+
+    padding: 0.75rem 1.5rem;
+    margin-top: 0.5rem;
+
+    background-color: #353535;
+    border: 3px solid #db6135;
+    border-radius: 5px;
+
+    color: aliceblue;
+    font-weight: bold;
+}
+
+.formContainer button:hover {
+    background-color: #404040;
+}
+
+.formContainer button:active {
+    background-color: #454545;
+}

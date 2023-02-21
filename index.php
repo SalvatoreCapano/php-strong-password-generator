@@ -1,31 +1,5 @@
 <?php
 
-// ASCII
-// 33 = !
-// 37 = %
-// 43 = +
-// 45 = -
-// 46 = /
-// 63 = ?
-// 48/57 = 0/9
-// 65/90 = A/Z
-// 97/122 = a/z
-
-// Generare n caratteri casuali
-
-// Lettere minuscole
-// Lettere maiuscole
-// Numero
-// Simboli
-
-// 1. Numero casuale tra 1 e 4 per decidere che carattere generare
-// 1.1. Se 1: generare un carattere ascii casuale tra 97 e 122
-// 1.2. Se 2: generare un carattere ascii casuale tra 65 e 90
-// 1.3. Se 3: generare un carattere ascii casuale tra 48 e 57
-// 1.4. Se 4: generare un carattere ascii casuale tra [33, 37, 43, 45, 46, 63]
-// 2. Aggiungere il carattere alla stringa 'password'
-// 3. Ripeti
-
 include  __DIR__ . '/partials/passwordGenerator.php';
 
 ?>
@@ -40,7 +14,7 @@ include  __DIR__ . '/partials/passwordGenerator.php';
     <title>PHP Strong Password Generator</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/style.css">
 </head>
 
 <body>
@@ -50,13 +24,22 @@ include  __DIR__ . '/partials/passwordGenerator.php';
 
             <h1>PHP Strong Password Generator</h1>
 
+            <div class="resultContainer">
+
+                <?php
+                    echo '<span class="newPassword">' . $newPassword . '</span>';
+                ?>
+
+            </div> <!-- /resultContainer-->
+
             <div class="formContainer">
 
                 <form action="" method="GET">
 
                     <div class="lengthGroup">
                         <label for="lengthInput">Lunghezza della Password</label>
-                        <input type="range" id="lengthInput" min="5" max="20" name="pswrdLngth">
+                        <input type="number" id="lengthInput" min="5" max="20" name="pswrdLngth" value="15">
+                        <!-- <input type="range" id="lengthInput" min="5" max="20" name="pswrdLngth"> -->
                     </div> <!-- /lengthGroup-->
 
                     <button type="submit">Genera</button>

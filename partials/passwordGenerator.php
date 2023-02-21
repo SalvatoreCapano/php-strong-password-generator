@@ -32,7 +32,6 @@ do {
 
 } while (strlen($newPassword) < $_GET['pswrdLngth']);
 
-echo "Lunghezza Password " . $_GET['pswrdLngth'] . '<br>';
-echo "La password generata e' " . $newPassword;
+// echo "Lunghezza Password " . $_GET['pswrdLngth'] . '<br>';
 
 ?>
